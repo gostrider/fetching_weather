@@ -41,6 +41,12 @@ def to_couchbase_document(data):
 
 
 def join_key(dictionary):
+    """
+    Combine parts to form a key for storing document in couchbase.
+
+    :param dictionary: [Dict] Dictionary of request data
+    :return: [String] Couchbase document id format, timestamp::country_code
+    """
     return str(dictionary.get('request_timestamp', int(time()))) + '::' + dictionary.get('country', 'not_found')
 
 

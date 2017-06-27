@@ -36,6 +36,23 @@ def get_time_range(start_date, end_date):
 
 
 def get_weather_by_timestamp(conn, start_date, end_date, country):
+    """
+    Generate a range of query date,
+    and make use of couchbase bulk operations to reduce db IO.
+
+    [ 1::HK
+        :
+     10::HK ] as multiple keys for bulk operation.
+
+    # TODO: reduce number of query timestamp in future.
+
+    :param conn: Couchbase connection
+    :param start_date: [String] Start date in ISO8061 format
+    :param end_date: [String] End date in ISO8061 format
+    :param country: [String] Country code
+    :return: [Dict] Multiple results key-values pairs
+    """
+
     start_timestamp = datetime_to_timestamp(start_date)
     end_timestamp = datetime_to_timestamp(end_date)
     timestamp_keys = map(lambda t: to_key_format(t, country), get_time_range(start_timestamp, end_timestamp))
