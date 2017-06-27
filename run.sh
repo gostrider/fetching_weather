@@ -3,6 +3,9 @@
 docker_cmd=`which docker`
 docker_ip=`docker-machine ip`
 
+# Clean up running container
+${docker_cmd} kill db 2>/dev/null
+${docker_cmd} rm db 2>/dev/null
 
 ${docker_cmd} run -d --name db -p 8091-8093:8091-8093 -p 11210:11210 couchbase
 

@@ -47,8 +47,8 @@ def get_weather_by_timestamp(conn, start_date, end_date, country):
     # TODO: reduce number of query timestamp in future.
 
     :param conn: Couchbase connection
-    :param start_date: [String] Start date in ISO8061 format
-    :param end_date: [String] End date in ISO8061 format
+    :param start_date: [String] Start date UTC in ISO8061 format
+    :param end_date: [String] End date UTC in ISO8061 format
     :param country: [String] Country code
     :return: [Dict] Multiple results key-values pairs
     """
