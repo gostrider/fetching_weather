@@ -14,7 +14,17 @@ Therefore, this version is only contain the web application source code and a st
 ### Project Requirement:
  - Python version: 3.6.0
  - Web Server: Tornado, version: 4.4.2
- - Storage: (Docker container)Couchbase, version: 2.2.2
+ - Storage: (Docker container) Couchbase
+
+### Installation:
+
+Install python 3.6+
+
+Tornado: `pip install tornado`
+
+couchbase client: `pip install couchbase`
+
+libcouchbase for python client: https://developer.couchbase.com/server/other-products/release-notes-archives/c-sdk
 
 
-### To run this project: `./run.sh`
+### To Run this project:  `./run.sh`
