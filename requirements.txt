@@ -1,2 +1,2 @@
-couchbase==2.2.2
+couchbase==2.5.10
 tornado==4.4.2
