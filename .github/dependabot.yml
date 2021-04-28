@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "01:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: couchbase
+    versions:
+    - 3.0.10
+    - 3.0.8
+    - 3.0.9
+    - 3.1.0
